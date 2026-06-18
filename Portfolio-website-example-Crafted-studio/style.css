@@ -1,0 +1,418 @@
+/* Font Url */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+:root {
+  --main-color: #222224;
+  --text-color: #fed1af;
+  --second-color: #f5f5f5;
+  --media-color: #2e2e2e;
+  
+  
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: "Inter", sans-serif;
+}
+
+body{
+
+}
+
+/* li{
+  list-style: none;
+} */
+
+.navbar {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  background-color: var(--main-color);
+}
+
+.logo {
+  color: var(--text-color);
+  font-size: 2rem;
+}
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu a {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  border-bottom: 0.2rem solid transparent;
+  transition: border-bottom-color 0.4s ease-in-out;
+  vertical-align: middle;
+  padding-bottom: 3px;
+}
+
+.nav-menu a:hover {
+  border-bottom-color: var(--second-color);
+}
+.nav-branding {
+  font-size: 2rem;
+}
+/* transition for links */
+.nav-link {
+  transition: 0.5s ease;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+.bar {
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--text-color);
+}
+.nav-item {
+  padding: 0 1.5rem;
+}
+
+
+.card-1 span.profile-placeholder {
+  background-color: #2c2c2e; /* İçerideki kartlardan bir tık daha açık, şık bir gri */
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /* 10rem yerine 50% tam yuvarlak yapmak için daha garantidir */
+  
+  /* İkonu tam ortalamak için flex kullanıyoruz */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Şablonu alan kişi yarın bir gün buraya fotoğraf yüklerse taşmasın diye */
+  overflow: hidden; 
+  border: 4px solid rgba(255, 255, 255, 0.05); /* Şık bir dış çerçeve */
+}
+
+/* İçindeki geçici kullanıcı ikonu */
+.card-1 span.profile-placeholder .user-icon {
+  width: 80px;
+  height: 80px;
+  color: rgba(255, 255, 255, 0.2); /* Çok parlamayan, soft bir ikon rengi */
+}
+
+.card-1 {
+  background-color: var(--text-color);
+  height: 250px;
+  width: 98%;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  padding: 20px; 
+  box-sizing: border-box;
+  
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.card-1 p {
+  color: var(--main-color);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  
+  width: 60%; 
+  overflow-wrap: break-word;
+}
+
+.card-1 span {
+  background-color: var(--main-color);
+  width: 200px;
+  height: 200px;
+  border-radius: 10rem;
+  flex-shrink: 0;   
+  
+}
+
+
+/* Slider-Bar */
+
+.infinite-wrapper {
+  max-width: 1500px;
+  margin: 40px auto;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.infinite-track {
+  display: flex;
+  gap: 25px;
+  width: max-content;
+}
+
+/* Masaüstü Kart Boyutu */
+.skill-card {
+  flex: 0 0 280px; 
+  background-color: var(--main-color);
+  border-radius: 20px;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  user-select: none;
+}
+
+.skill-card img {
+  height: 100px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Alttaki Bar Konteyneri */
+
+
+
+@keyframes loadingBar {
+  0% { left: -50%; }
+  100% { left: 100%; }
+}
+
+
+/* img-gallery */
+
+
+.web-gallery {
+  display: grid;
+  /* Masaüstünde tam 3 eşit sütun oluşturur (3 yukarı, 3 aşağı düzeninin sırrı) */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; /* Kartların arasındaki boşluk */
+  max-width: 1000px; /* Küçük kartlar olacağı için maksimum genişliği daralttık */
+  margin: 40px auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+
+}
+
+/* Her Bir Kartın Stili */
+.card-img {
+ background-color: var(--text-color);
+  border-radius: 16px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hover Efekti (Kartın üzerine gelince hafifçe büyüme) */
+.card-img:hover {
+  transform: translateY(-4px);
+  cursor: pointer;
+}
+
+/* Kart Başlıkları (<p>) */
+.card-img p {
+ color: var(--main-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+/* Resimlerin Kutuya Tam Oturması ve Taşmaması İçin */
+.card-img img {
+  width: 100%;
+  height: 220px;       /* Resimlerin hepsini aynı hizaya getirmek için sabit yükseklik */
+  object-fit: cover;   /* Resimlerin en-boy oranını bozmadan kutuyu doldurmasını sağlar */
+  border-radius: 8px;
+}
+
+
+
+/* footer */
+footer {
+  background-color: #1c1c1e; /* Projenin genel koyu temasına uyması için koyu gri/siyah */
+  width: 100%;
+  padding: 40px 20px;       /* Sabit height yerine padding kullanarak esneklik sağladık */
+  box-sizing: border-box;
+  margin-top: 50px;         /* Üstteki galeri ile arasına mesafe koyar */
+  
+  /* Yazıyı dikeyde ve yatayda kusursuz ortalamanın en modern yolu */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* İsteğe bağlı: Üst kenara şık bir çizgi (Görsel bütünlük için) */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+  color: var(--text-color);           /* Kartların altındaki sarı bar renginle uyumlu şık bir sarı/gold tonu */
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;    /* Harflerin arasına hafif modern bir boşluk */
+  margin: 0;                /* Tarayıcının varsayılan p boşluklarını sıfırladık */
+  font-family: sans-serif;
+  text-align: center;
+}
+
+
+@media screen and (max-width: 768px) {
+  footer {
+    padding: 25px 15px;     /* Küçük ekranlarda footer'ın çok devasa durmaması için iç boşluğu daralttık */
+  }
+
+  footer p {
+    font-size: 1rem;        /* Mobilde yazı boyutunu bir tık küçülterek kibarlaştırdık */
+    letter-spacing: 1px;
+  }
+}
+
+
+/* img-gallery */
+
+
+@media screen and (max-width: 768px) {
+  
+  /* Kartları mobilde yan yanadan alt alta düzenine geçiriyoruz */
+  .web-gallery {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+  }
+
+  .card-img {
+    grid-template-columns: 1fr;      /* Mobilde kartlar ekranın tamamını kaplasın */
+  }
+
+  .card-img img {
+    height: 160px;
+  }
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+  
+  .infinite-wrapper {
+    margin: 20px auto;
+    padding: 0 10px; /* Mobilde kenar boşluklarını daralttık */
+  }
+
+  .infinite-track {
+    gap: 15px; /* Mobilde kartların arasındaki boşluğu düşürdük */
+  }
+
+  /* Mobil Kart Ayarları */
+  .skill-card {
+    flex: 0 0 200px; /* Mobilde kartlar çok devasa durmasın diye genişliği 200px'e çektik */
+    border-radius: 15px;
+    padding: 25px 15px; /* İç boşlukları küçülttük */
+  }
+
+  .skill-card .card-title {
+    font-size: 1.2rem; /* Yazı boyutunu mobilde dengeledik */
+    margin-bottom: 12px;
+  }
+
+  .skill-card img {
+    height: 55px; /* Logoları mobil ekranlara uydurduk */
+  }
+
+  
+}
+
+/* div.card1 responsive */
+
+@media screen and (max-width: 768px) {
+  
+  .card-1 {
+    height: auto; /* Mobilde metin uzayacağı için kutu esnek olur */
+    min-height: 250px;
+    width: calc(100% - 2rem);
+    margin: 1rem;
+    padding: 20px;
+    
+    /* Mobilde elemanları alt alta diziyoruz */
+    flex-direction: column-reverse; 
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .card-1 p {
+    width: 100%; /* Mobilde metin tüm genişliği kaplasın */
+    font-size: 1.1rem;
+    text-align: center; /* Mobilde daha estetik dursun diye ortaladık */
+  }
+
+  .card-1 span {
+    width: 150px; /* Mobilde yuvarlak çok büyük durmasın */
+    height: 150px;
+    margin: 0 auto; /* Yuvarlağı mobilde ortala */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .bar {
+    display: block;
+  }
+  .hamburger {
+    display: block;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(11.5px);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-11.5px);
+  }
+  .nav-menu {
+    position: fixed;
+    right: -100%;
+    top: 70px;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: var(--media-color);
+    transition: 0.3s;
+  }
+
+  .nav-menu a {
+    color: var(--text-color);
+    display: inline-block;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    border-bottom: 0.2rem solid transparent;
+    transition: border-bottom-color 0.4s ease-in-out;
+    vertical-align: middle;
+    padding-bottom: 3px;
+  }
+
+  .nav-item {
+    padding: 1.5rem 0;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+}
