@@ -24,9 +24,6 @@ body{
 
 }
 
-/* li{
-  list-style: none;
-} */
 
 .navbar {
   height: 70px;
@@ -63,7 +60,6 @@ body{
 .nav-branding {
   font-size: 2rem;
 }
-/* transition for links */
 .nav-link {
   transition: 0.5s ease;
 }
@@ -86,26 +82,24 @@ body{
 
 
 .card-1 span.profile-placeholder {
-  background-color: #2c2c2e; /* İçerideki kartlardan bir tık daha açık, şık bir gri */
+  background-color: #2c2c2e; 
   width: 200px;
   height: 200px;
-  border-radius: 50%; /* 10rem yerine 50% tam yuvarlak yapmak için daha garantidir */
+  border-radius: 50%; 
   
-  /* İkonu tam ortalamak için flex kullanıyoruz */
   display: flex;
   justify-content: center;
   align-items: center;
   
-  /* Şablonu alan kişi yarın bir gün buraya fotoğraf yüklerse taşmasın diye */
   overflow: hidden; 
-  border: 4px solid rgba(255, 255, 255, 0.05); /* Şık bir dış çerçeve */
+  border: 4px solid rgba(255, 255, 255, 0.05); 
 }
 
 /* İçindeki geçici kullanıcı ikonu */
 .card-1 span.profile-placeholder .user-icon {
   width: 80px;
   height: 80px;
-  color: rgba(255, 255, 255, 0.2); /* Çok parlamayan, soft bir ikon rengi */
+  color: rgba(255, 255, 255, 0.2); 
 }
 
 .card-1 {
@@ -157,7 +151,6 @@ body{
   width: max-content;
 }
 
-/* Masaüstü Kart Boyutu */
 .skill-card {
   flex: 0 0 280px; 
   background-color: var(--main-color);
@@ -174,7 +167,6 @@ body{
   pointer-events: none;
 }
 
-/* Alttaki Bar Konteyneri */
 
 
 
@@ -184,22 +176,19 @@ body{
 }
 
 
-/* img-gallery */
 
 
 .web-gallery {
   display: grid;
-  /* Masaüstünde tam 3 eşit sütun oluşturur (3 yukarı, 3 aşağı düzeninin sırrı) */
   grid-template-columns: repeat(3, 1fr); 
-  gap: 20px; /* Kartların arasındaki boşluk */
-  max-width: 1000px; /* Küçük kartlar olacağı için maksimum genişliği daralttık */
+  gap: 20px;
+  max-width: 1000px; 
   margin: 40px auto;
   padding: 0 10px;
   box-sizing: border-box;
 
 }
 
-/* Her Bir Kartın Stili */
 .card-img {
  background-color: var(--text-color);
   border-radius: 16px;
@@ -213,13 +202,11 @@ body{
   align-items: center;
 }
 
-/* Hover Efekti (Kartın üzerine gelince hafifçe büyüme) */
 .card-img:hover {
   transform: translateY(-4px);
   cursor: pointer;
 }
 
-/* Kart Başlıkları (<p>) */
 .card-img p {
  color: var(--main-color);
   font-size: 1.1rem;
@@ -228,11 +215,10 @@ body{
   margin-bottom: 12px;
 }
 
-/* Resimlerin Kutuya Tam Oturması ve Taşmaması İçin */
 .card-img img {
   width: 100%;
-  height: 220px;       /* Resimlerin hepsini aynı hizaya getirmek için sabit yükseklik */
-  object-fit: cover;   /* Resimlerin en-boy oranını bozmadan kutuyu doldurmasını sağlar */
+  height: 220px;      
+  object-fit: cover;  /
   border-radius: 8px;
 }
 
@@ -240,27 +226,25 @@ body{
 
 /* footer */
 footer {
-  background-color: #1c1c1e; /* Projenin genel koyu temasına uyması için koyu gri/siyah */
+  background-color: #1c1c1e; 
   width: 100%;
-  padding: 40px 20px;       /* Sabit height yerine padding kullanarak esneklik sağladık */
+  padding: 40px 20px;       
   box-sizing: border-box;
-  margin-top: 50px;         /* Üstteki galeri ile arasına mesafe koyar */
+  margin-top: 50px;         
   
-  /* Yazıyı dikeyde ve yatayda kusursuz ortalamanın en modern yolu */
   display: flex;
   justify-content: center;
   align-items: center;
   
-  /* İsteğe bağlı: Üst kenara şık bir çizgi (Görsel bütünlük için) */
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 footer p {
-  color: var(--text-color);           /* Kartların altındaki sarı bar renginle uyumlu şık bir sarı/gold tonu */
+  color: var(--text-color);          
   font-size: 1.2rem;
   font-weight: 500;
-  letter-spacing: 1.5px;    /* Harflerin arasına hafif modern bir boşluk */
-  margin: 0;                /* Tarayıcının varsayılan p boşluklarını sıfırladık */
+  letter-spacing: 1.5px;    
+  margin: 0;                
   font-family: sans-serif;
   text-align: center;
 }
@@ -268,11 +252,11 @@ footer p {
 
 @media screen and (max-width: 768px) {
   footer {
-    padding: 25px 15px;     /* Küçük ekranlarda footer'ın çok devasa durmaması için iç boşluğu daralttık */
+    padding: 25px 15px;   
   }
 
   footer p {
-    font-size: 1rem;        /* Mobilde yazı boyutunu bir tık küçülterek kibarlaştırdık */
+    font-size: 1rem;        
     letter-spacing: 1px;
   }
 }
@@ -283,14 +267,13 @@ footer p {
 
 @media screen and (max-width: 768px) {
   
-  /* Kartları mobilde yan yanadan alt alta düzenine geçiriyoruz */
   .web-gallery {
     grid-template-columns: repeat(2, 1fr); 
     gap: 15px;
   }
 
   .card-img {
-    grid-template-columns: 1fr;      /* Mobilde kartlar ekranın tamamını kaplasın */
+    grid-template-columns: 1fr;      
   }
 
   .card-img img {
@@ -305,27 +288,27 @@ footer p {
   
   .infinite-wrapper {
     margin: 20px auto;
-    padding: 0 10px; /* Mobilde kenar boşluklarını daralttık */
+    padding: 0 10px; 
   }
 
   .infinite-track {
-    gap: 15px; /* Mobilde kartların arasındaki boşluğu düşürdük */
+    gap: 15px;
   }
 
   /* Mobil Kart Ayarları */
   .skill-card {
-    flex: 0 0 200px; /* Mobilde kartlar çok devasa durmasın diye genişliği 200px'e çektik */
+    flex: 0 0 200px; 
     border-radius: 15px;
-    padding: 25px 15px; /* İç boşlukları küçülttük */
+    padding: 25px 15px;
   }
 
   .skill-card .card-title {
-    font-size: 1.2rem; /* Yazı boyutunu mobilde dengeledik */
+    font-size: 1.2rem; 
     margin-bottom: 12px;
   }
 
   .skill-card img {
-    height: 55px; /* Logoları mobil ekranlara uydurduk */
+    height: 55px; 
   }
 
   
@@ -336,28 +319,27 @@ footer p {
 @media screen and (max-width: 768px) {
   
   .card-1 {
-    height: auto; /* Mobilde metin uzayacağı için kutu esnek olur */
+    height: auto; 
     min-height: 250px;
     width: calc(100% - 2rem);
     margin: 1rem;
     padding: 20px;
     
-    /* Mobilde elemanları alt alta diziyoruz */
     flex-direction: column-reverse; 
     justify-content: center;
     gap: 20px;
   }
 
   .card-1 p {
-    width: 100%; /* Mobilde metin tüm genişliği kaplasın */
+    width: 100%; 
     font-size: 1.1rem;
-    text-align: center; /* Mobilde daha estetik dursun diye ortaladık */
+    text-align: center; 
   }
 
   .card-1 span {
-    width: 150px; /* Mobilde yuvarlak çok büyük durmasın */
+    width: 150px; 
     height: 150px;
-    margin: 0 auto; /* Yuvarlağı mobilde ortala */
+    margin: 0 auto; 
   }
 }
 
